@@ -1,0 +1,17 @@
+name: CI/CD for WordPress
+
+on:
+  push:
+    branches: [master]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Wait for services to be ready
+        run: sleep 60
